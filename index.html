@@ -5,23 +5,166 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aula — Garanta seu acesso</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --cream: #FAF6F0;
+  --cream-2: #F1EAE0;
+  --charcoal: #2B2925;
+  --charcoal-soft: #55524C;
+  --terracotta: #C1704A;
+  --terracotta-dark: #A85C39;
+  --sage: #8FA893;
+  --sage-dark: #6F8873;
+  --line: #E4DCCF;
+}
+
 * { box-sizing: border-box; }
-body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; background:#faf8f4; color:#2b2b2b; }
-.container { max-width:720px; margin:0 auto; padding:48px 20px; text-align:center; }
-h1 { font-size:28px; margin-bottom:12px; }
-p { line-height:1.5; }
-.small { font-size:13px; color:#888; margin-top:24px; }
-.btn { display:inline-block; margin-top:20px; padding:14px 28px; background:#b5651d; color:#fff; text-decoration:none; border-radius:6px; font-weight:600; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  z-index: 0;
+}
+.blob-1 { width: 320px; height: 320px; background: var(--sage); top: -80px; left: -80px; }
+.blob-2 { width: 280px; height: 280px; background: var(--terracotta); bottom: -60px; right: -60px; }
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 52px 40px;
+  text-align: center;
+  box-shadow: 0 20px 50px -20px rgba(43,41,37,0.15);
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 14px;
+  color: var(--charcoal);
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--charcoal-soft);
+  margin: 0 0 8px;
+}
+
+.beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.beneficios li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--charcoal-soft);
+}
+.beneficios svg { flex-shrink: 0; margin-top: 2px; }
+
+.btn {
+  display: inline-block;
+  margin-top: 26px;
+  padding: 16px 36px;
+  background: var(--terracotta);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn:hover { background: var(--terracotta-dark); transform: translateY(-1px); }
+
+.small {
+  font-size: 12.5px;
+  color: #9A968D;
+  margin-top: 26px;
+}
+
+@media (max-width: 480px) {
+  .card { padding: 40px 24px; }
+  h1 { font-size: 27px; }
+}
 </style>
 </head>
 <body>
-  <main class="container">
-    <h1>Sua aula está pronta para você</h1>
-    <p>Ao concluir sua compra, você recebe automaticamente o link de acesso liberado por e-mail.</p>
-    <a class="btn" href="https://pay.hotmart.com/Y106727934I?off=744lpqq4" target="_blank" rel="noopener">
-      Quero garantir meu acesso
-    </a>
-    <p class="small">Pagamento processado com segurança pela Hotmart.</p>
-  </main>
+  <div class="page">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <main class="card">
+      <span class="kicker">Aula exclusiva</span>
+      <h1>Sua aula está pronta para você</h1>
+      <p>Ao concluir sua compra, seu acesso é liberado automaticamente e o link chega direto no seu e-mail.</p>
+
+      <ul class="beneficios">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#8FA893" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Acesso liberado automaticamente após o pagamento
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#8FA893" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Assista quando e onde quiser, no seu tempo
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#8FA893" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Pagamento processado com segurança pela Hotmart
+        </li>
+      </ul>
+
+      <a class="btn" href="https://pay.hotmart.com/Y106727934I?off=744lpqq4" target="_blank" rel="noopener">
+        Quero garantir meu acesso
+      </a>
+      <p class="small">Pagamento processado com segurança pela Hotmart.</p>
+    </main>
+  </div>
 </body>
 </html>
