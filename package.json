@@ -1,0 +1,10 @@
+{
+  "name": "hotmart-vercel-token-site",
+  "version": "1.0.0",
+  "description": "Site com checkout Hotmart + liberacao de aula por token unico (Vercel + Upstash Redis + VTurb)",
+  "dependencies": {
+    "@upstash/redis": "^1.34.0",
+    "@upstash/ratelimit": "^2.0.3",
+    "nodemailer": "^6.9.14"
+  }
+}

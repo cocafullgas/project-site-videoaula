@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/aula", "destination": "/api/aula" },
+    { "source": "/admin/tokens", "destination": "/api/admin-tokens" },
+    { "source": "/webhook/hotmart", "destination": "/api/webhook-hotmart" }
+  ]
+}
